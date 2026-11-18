@@ -1,0 +1,345 @@
+[
+ {
+  "path": "api/s1-create-relation.json",
+  "sha256": "855d808cd585d1b129ec72e51b390ba6db92d4da18e8dc99f350170379114f16",
+  "bytes": 409,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "excerpts/ambiguous-remnant-B-kill-after-60ms-unconsumed-response.txt",
+  "sha256": "1dc73cc704e1a04aef47925e84010f932887887d957a3651b82434c0834289d5",
+  "bytes": 201,
+  "retention": "excerpt",
+  "note": "response bytes still in flight after SIGKILL for plan B:kill-after-60ms-unconsumed-response; not consumed by the client before the crash"
+ },
+ {
+  "path": "api/rows-after-ambiguous-restarts.json",
+  "sha256": "964562bae025ad240399a92c76f3f275590adada442075aaf89d4f46d6722a83",
+  "bytes": 639,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/s3-checkpoint-response.json",
+  "sha256": "4a5007838254cd2b9ccd87a8a43f1ffad365f2ff074cdac34e19565d769a97a5",
+  "bytes": 19,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/s3-stats-after-checkpoint-restart.json",
+  "sha256": "757f5c7385cfc6df0061a97133a68f3166c84e6cdcac36a316119209530c795b",
+  "bytes": 251,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/rows-checkpoint-journal-suffix.json",
+  "sha256": "eeee93f4b0fb889afef81cb50d7e255015c2953115baee9d2c67f84655e12340",
+  "bytes": 801,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "journal-tables/A-journal-after-S3.json",
+  "sha256": "237d4eda2eb892742d12b9ea451f5c594da2f795a8730374404f5550a5622641",
+  "bytes": 2890,
+  "retention": "derived",
+  "note": "independent journal decode; frame metadata only, no row payloads"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-source/journal.lmw",
+  "sha256": "eeb4eb43716c5c0c95a85c68b5323015e3e96a30ff09d2d3fafc18a9e94df31e",
+  "bytes": 2253,
+  "retention": "hash-only",
+  "note": "source journal after S3 (full content hash-only)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-source/checkpoint.lmi",
+  "sha256": "7da1ad7ebc432b92f4c374300021a5bc5bd3b7ab0f6884eedafdcbd49442348e",
+  "bytes": 1368,
+  "retention": "hash-only",
+  "note": "checkpoint image at sequence 7"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/backup-H.lmi",
+  "sha256": "564698f0e4cd0e4ee4819d554d6c635215df2d956661c587d4291f2d6ee686d0",
+  "bytes": 1456,
+  "retention": "hash-only",
+  "note": "portable backup image (hash-only; envelope header retained in excerpts)"
+ },
+ {
+  "path": "excerpts/backup-envelope-head.txt",
+  "sha256": "62672210901da09adef461159929a395c30f2cd926c868a7d59db980e8092811",
+  "bytes": 770,
+  "retention": "excerpt",
+  "note": "first 160 bytes of backup envelope"
+ },
+ {
+  "path": "api/s3-changes-after-cursor-source.json",
+  "sha256": "cee9fa1098c20b724ded92bef8ed137314abac25a2a012be04987212f496a074",
+  "bytes": 1903,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/s3-changes-after-backup-seq-source.json",
+  "sha256": "9bb19a0fc0353e727bd8e4abb777be3ab67180405c5e90b8626caa17ad3c164d",
+  "bytes": 388,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "journal-tables/A-journal-final.json",
+  "sha256": "e0899db6d3329f826e6310cdcd86c8cd73ebe4bb125f705785ebc8f6ba3f6c23",
+  "bytes": 3194,
+  "retention": "derived",
+  "note": "independent journal decode; frame metadata only, no row payloads"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-source/journal.lmw",
+  "sha256": "94b1309bebbac004f0f9c23063010562bc3d4c41a291c65f7ea157c475895d42",
+  "bytes": 2462,
+  "retention": "hash-only",
+  "note": "source journal final (hash-only)"
+ },
+ {
+  "path": "excerpts/A-journal-header.txt",
+  "sha256": "b6be74f85ebf76e4f14762a5f95385c87aab4f7a38b0fc36bfa8fe1aa27917c3",
+  "bytes": 99,
+  "retention": "excerpt",
+  "note": "source journal header (16 bytes)"
+ },
+ {
+  "path": "api/s4-stats-restored.json",
+  "sha256": "54f755979858a540799a0d62ff3bfacc54cc13ff4bc53f444af38182debaf444",
+  "bytes": 251,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/rows-restored--backup-image.json",
+  "sha256": "38a2ad63b00662daf320f0613fb01813db2749b29cef5960bb0898ae370c4130",
+  "bytes": 798,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/s4-changes-old-cursor-410.json",
+  "sha256": "f02201f2f83f2097c81be51381bbf337caed00c5d505d92f13bcb8a62cf06b22",
+  "bytes": 117,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/s4-changes-at-base-200.json",
+  "sha256": "83349be375f4da6ea006d67d70924aad10fdaaba163b66ed1366ebacc09f3776",
+  "bytes": 116,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/s4-changes-after-base-restored.json",
+  "sha256": "4aecc78b775151bab11a485985fb99b7aa27dc3747fb61c1db69fde5e041822a",
+  "bytes": 388,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/s5-stats-restored-restart.json",
+  "sha256": "a32d55a2b7187256ef7bf082bda29ce4349983ffa13aa8dcdd74adb5e63f0417",
+  "bytes": 252,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/rows-restored-own-journal-after-restart.json",
+  "sha256": "9a0aab41bd0ab379d26acfcf6e2bf110e7b3722fe651556d5b207d199347555c",
+  "bytes": 893,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "journal-tables/R-journal-after-S5.json",
+  "sha256": "8745ead3e2f9e7d34f23689b07ac08fa451bc974d1df2fa0605daa1ca1267701",
+  "bytes": 508,
+  "retention": "derived",
+  "note": "independent journal decode; frame metadata only, no row payloads"
+ },
+ {
+  "path": "excerpts/R-journal-header.txt",
+  "sha256": "cd031f504ee67758328c9416ab3803c0995b8e0dd526e27ddd59ec35e94e2f33",
+  "bytes": 99,
+  "retention": "excerpt",
+  "note": "restored journal header: base equals backup sequence"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/R-restored/journal.lmw",
+  "sha256": "e4d43fcfcf34cc6a91c76be20f313dd463e8e99bf2631833a05fff9bb532647e",
+  "bytes": 225,
+  "retention": "hash-only",
+  "note": "restored journal (hash-only)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/R-restored/checkpoint.lmi",
+  "sha256": "564698f0e4cd0e4ee4819d554d6c635215df2d956661c587d4291f2d6ee686d0",
+  "bytes": 1456,
+  "retention": "hash-only",
+  "note": "restored checkpoint image installed from backup (hash-only)"
+ },
+ {
+  "state": "A-tail-journal-with-3-byte-tail-before-restart",
+  "sha256": "42995038a1becaea4de1e5217ff29729b96a81b5a1e1b6467b58e2804ddee802",
+  "bytes": 2465,
+  "retention": "hash-only",
+  "note": "journal state with the appended incomplete tail, before recovery truncated it"
+ },
+ {
+  "path": "excerpts/tail-append-before-after.txt",
+  "sha256": "8c7938cb5999b1b2cb5af94dd5a6337e99556de2aef9e3285d04ed7fbfa91f3b",
+  "bytes": 438,
+  "retention": "excerpt",
+  "note": "incomplete tail injection: 3 trailing bytes appended to a copy of the source journal"
+ },
+ {
+  "path": "api/s6-stats-tail-recovered.json",
+  "sha256": "655f55e8a3a986591bdda873ae272e5595a346e44aa9ff72505bf411f869d31b",
+  "bytes": 252,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "api/rows-tail-truncation.json",
+  "sha256": "0a0a3f1354b989864475da2af5287be9cce5abd72c49b47d545b349215ce223d",
+  "bytes": 874,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "path": "journal-tables/A-tail-journal-after-truncation.json",
+  "sha256": "e0899db6d3329f826e6310cdcd86c8cd73ebe4bb125f705785ebc8f6ba3f6c23",
+  "bytes": 3194,
+  "retention": "derived",
+  "note": "independent journal decode; frame metadata only, no row payloads"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-tail/journal.lmw",
+  "sha256": "94b1309bebbac004f0f9c23063010562bc3d4c41a291c65f7ea157c475895d42",
+  "bytes": 2462,
+  "retention": "hash-only",
+  "note": "journal after automatic tail truncation (hash-only)"
+ },
+ {
+  "path": "excerpts/corrupt-last-frame-flip.txt",
+  "sha256": "2c9ca6c52918c9cca14b06ed8a0c5bca512e5a59adcbf083d5a1b6cd0b5498a4",
+  "bytes": 178,
+  "retention": "excerpt",
+  "note": "single-bit flip in last-frame of a journal copy"
+ },
+ {
+  "path": "api/s6-corrupt-last-frame-startup.json",
+  "sha256": "cb63bfe225cfe464aac243a6755bd9d0e324766ad3c7448f395526959f76d7d5",
+  "bytes": 202,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-corrupt-last-frame/journal.lmw",
+  "sha256": "46d13110c3c6fa793590915337d31a9ca5ce04d7d1139b72503f24d69d92b6ea",
+  "bytes": 2462,
+  "retention": "hash-only",
+  "note": "corrupted journal specimen last-frame (hash-only)"
+ },
+ {
+  "path": "excerpts/corrupt-mid-frame-flip.txt",
+  "sha256": "a5ab579ba808f668a4efe217ae5a1f5a820434662617622a2f7c1e38fe9cefe9",
+  "bytes": 191,
+  "retention": "excerpt",
+  "note": "single-bit flip in mid-frame of a journal copy"
+ },
+ {
+  "path": "api/s6-corrupt-mid-frame-startup.json",
+  "sha256": "1521bab1a25e27e69c27b20072f10531acaa51d32eae91cc479c03c66bacdedd",
+  "bytes": 200,
+  "retention": "raw",
+  "note": "HTTP API response/request capture"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-corrupt-mid-frame/journal.lmw",
+  "sha256": "95f6e5a32561972bd253f346df6d1662c8d69a3a0c9dcce775d0f8f317b93fca",
+  "bytes": 2462,
+  "retention": "hash-only",
+  "note": "corrupted journal specimen mid-frame (hash-only)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-source.S1-r1.stderr.log",
+  "sha256": "e4a969fd09fd472370e1d03df43fb0e4b323c6bc5943a7a6613bb22bf29cada3",
+  "bytes": 62,
+  "retention": "hash-only",
+  "note": "server stderr log (hash-only; startup logs are not the evidence, the decoded state is)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-source.S1-r2.stderr.log",
+  "sha256": "9ecf7a006ba8b1ff8efff876d991bd4649e99a8923551f7b62c3ef0ea781d216",
+  "bytes": 62,
+  "retention": "hash-only",
+  "note": "server stderr log (hash-only; startup logs are not the evidence, the decoded state is)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-source.S1-r3.stderr.log",
+  "sha256": "096366455b20ed316dac4c70f33b800c9825b065cdcfc702ce73d37c217de51c",
+  "bytes": 62,
+  "retention": "hash-only",
+  "note": "server stderr log (hash-only; startup logs are not the evidence, the decoded state is)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-source.S1.stderr.log",
+  "sha256": "9a3cddad863d927b7ed39396f558f35f7bf4680fd820d3ef29081b8f25469751",
+  "bytes": 62,
+  "retention": "hash-only",
+  "note": "server stderr log (hash-only; startup logs are not the evidence, the decoded state is)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-source.S3.stderr.log",
+  "sha256": "d4c5adf0a1223949291c3caa58eecb524013cec5ebf4975551154dc9638fcd63",
+  "bytes": 62,
+  "retention": "hash-only",
+  "note": "server stderr log (hash-only; startup logs are not the evidence, the decoded state is)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/A-tail.S6.stderr.log",
+  "sha256": "c319d8b2149a77f02aaa5059ca634d963db092cc36395426c48d2bbe5ab588b0",
+  "bytes": 62,
+  "retention": "hash-only",
+  "note": "server stderr log (hash-only; startup logs are not the evidence, the decoded state is)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/R-restored.S4.stderr.log",
+  "sha256": "7c3f72cd408070163d8ea783a79c0f1602a4004c54112b08408b15f78c6fc84d",
+  "bytes": 62,
+  "retention": "hash-only",
+  "note": "server stderr log (hash-only; startup logs are not the evidence, the decoded state is)"
+ },
+ {
+  "original_path": "/tmp/lamina-evidence-9SdSfW/R-restored.S5.stderr.log",
+  "sha256": "a482d93130c100fcf047690a85e7802e3e2622f113c28c2495f732c5d8985c00",
+  "bytes": 62,
+  "retention": "hash-only",
+  "note": "server stderr log (hash-only; startup logs are not the evidence, the decoded state is)"
+ },
+ {
+  "path": "summary.json",
+  "sha256": "7d8b47f02818a3cd8a6aae6a76e74a6a1adb3192247fbfc42a354626954cad5a",
+  "bytes": 4470,
+  "retention": "raw",
+  "note": "run summary"
+ },
+ {
+  "path": "claims.json",
+  "sha256": "48ba737597ba2f252f281b679470c302b4a6180bdbc1ee2c68a2bb2c34e5a893",
+  "bytes": 5673,
+  "retention": "raw",
+  "note": "claim-by-claim verification results"
+ }
+]

@@ -1,0 +1,9 @@
+{
+ "status": 410,
+ "body": {
+  "error": {
+   "code": "snapshot",
+   "message": "change history begins at 8"
+  }
+ }
+}

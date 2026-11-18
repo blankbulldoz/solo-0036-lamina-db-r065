@@ -1,0 +1,30 @@
+{
+ "status": 201,
+ "body": {
+  "name": "spectra",
+  "primary": "sample",
+  "columns": [
+   {
+    "name": "sample",
+    "type": "int",
+    "nullable": false
+   },
+   {
+    "name": "band",
+    "type": "text",
+    "nullable": false
+   },
+   {
+    "name": "amplitude",
+    "type": "int",
+    "nullable": true
+   },
+   {
+    "name": "valid",
+    "type": "bool",
+    "nullable": false
+   }
+  ],
+  "created": 1
+ }
+}

@@ -1,0 +1,153 @@
+{
+ "environment": {
+  "binary_path": "/workspace/bin/laminad",
+  "binary_sha256": "dcc0877885375c0275f6e79da0ac8ef174997ef952d8161d77b9b66e817df0c9",
+  "binary_bytes": 9994802,
+  "platform": "Linux d0f596950b65 7.2.12-orbstack-00394-gbecdd6130068 #1 SMP PREEMPT Thu Oct 22 22:17:17 UTC 2026 aarch64",
+  "python": "3.11.2",
+  "run_start_utc": "2026-11-18T04:40:37.275+00:00",
+  "kernel_note": "stock binary; faults injected externally only (SIGKILL, file append, byte flip on copies)",
+  "git_head": "cb08bd0ed7adf4df8e4a080db7ddcdc2f7a9cd42"
+ },
+ "work_dir_not_retained": "/tmp/lamina-evidence-9SdSfW",
+ "sequences": {
+  "journal_base_source": 0,
+  "journal_first_record_source": 1,
+  "confirmed_commits": [
+   2,
+   3,
+   4,
+   5,
+   7,
+   8,
+   9
+  ],
+  "consumer_cursor": 3,
+  "masking_transitions": [
+   4,
+   5
+  ],
+  "checkpoint": 7,
+  "head_at_backup": 8,
+  "source_head_final": 9,
+  "restored_base": 8,
+  "restored_head": 9
+ },
+ "ambiguous_commits": [
+  {
+   "plan": "A0:large-commit-kill-immediately",
+   "staged_samples": "5000..5999",
+   "staged_count": 1000,
+   "tx": "d5000f9dad53526b755ef22a1adde2e1",
+   "delay_ms": 0.0,
+   "t_stage_ms": 64.653,
+   "t_staged_ms": 894.519,
+   "t_send_ms": 894.54,
+   "t_kill_ms": 897.47,
+   "response_consumed_before_crash": false,
+   "response_bytes_observed_after_kill": 0,
+   "response_remnant_prefix": "",
+   "post_restart": {
+    "sequence": 5,
+    "recovered_tail_bytes": 0,
+    "staged_count": 1000,
+    "present_count": 0,
+    "durable": false,
+    "atomic": true
+   }
+  },
+  {
+   "plan": "A:small-commit-kill-immediately",
+   "staged_samples": [
+    7
+   ],
+   "staged_count": 1,
+   "tx": "6c982a8bdc707215089f6c66fd8c71d5",
+   "delay_ms": 0.0,
+   "t_stage_ms": 930.014,
+   "t_staged_ms": 930.288,
+   "t_send_ms": 930.309,
+   "t_kill_ms": 932.017,
+   "response_consumed_before_crash": false,
+   "response_bytes_observed_after_kill": 0,
+   "response_remnant_prefix": "",
+   "post_restart": {
+    "sequence": 5,
+    "recovered_tail_bytes": 0,
+    "staged_count": 1,
+    "present_count": 0,
+    "durable": false,
+    "atomic": true
+   }
+  },
+  {
+   "plan": "B:kill-after-60ms-unconsumed-response",
+   "staged_samples": [
+    8
+   ],
+   "staged_count": 1,
+   "tx": "85d14a96629fae804813e5cac1cb3af4",
+   "delay_ms": 60.0,
+   "t_stage_ms": 964.208,
+   "t_staged_ms": 964.479,
+   "t_send_ms": 964.501,
+   "t_kill_ms": 1026.627,
+   "response_consumed_before_crash": false,
+   "response_bytes_observed_after_kill": 200,
+   "response_remnant_prefix": "HTTP/1.1 200 OK\r\nContent-Type: application/json; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 18 Nov 2026 ",
+   "remnant_excerpt": "excerpts/ambiguous-remnant-B-kill-after-60ms-unconsumed-response.txt",
+   "post_restart": {
+    "sequence": 6,
+    "recovered_tail_bytes": 0,
+    "staged_count": 1,
+    "present_count": 1,
+    "durable": true,
+    "atomic": true
+   }
+  }
+ ],
+ "verification": {
+  "rows_after_ambiguous_restarts": true,
+  "time_travel_at_checkpoint": true,
+  "restored_equals_backup_image": true,
+  "post_backup_commit_absent_in_restored": true,
+  "restored_after_restart": true,
+  "tail_truncation": true,
+  "corruption_refusals": [
+   {
+    "specimen": "last-frame",
+    "refused": true,
+    "exit_code": 1,
+    "timed_out_still_serving": false,
+    "flipped_sha256": "46d13110c3c6fa793590915337d31a9ca5ce04d7d1139b72503f24d69d92b6ea",
+    "stderr_tail": "2026/11/18 04:40:38 ERROR lamina stopped error=\"journal checksum mismatch at 2253\"",
+    "journal_unmodified_after_refusal": true
+   },
+   {
+    "specimen": "mid-frame",
+    "refused": true,
+    "exit_code": 1,
+    "timed_out_still_serving": false,
+    "flipped_sha256": "95f6e5a32561972bd253f346df6d1662c8d69a3a0c9dcce775d0f8f317b93fca",
+    "stderr_tail": "2026/11/18 04:40:38 ERROR lamina stopped error=\"journal checksum mismatch at 16\"",
+    "journal_unmodified_after_refusal": true
+   }
+  ],
+  "cursor_gap": {
+   "old_cursor_410": true,
+   "at_base_200": true,
+   "lineage_diverges_at_same_sequence": true
+  }
+ },
+ "claims": {
+  "C1-confirmed-prefix-durable": "verified",
+  "C2-ambiguous-commit-indeterminate-at-crash": "verified",
+  "C3-checkpoint-plus-suffix-equals-prefix": "verified",
+  "C4-backup-plus-catchup-equals-restored-prefix": "verified",
+  "C5-incomplete-tail-truncated": "verified",
+  "C6-complete-corruption-refused": "verified",
+  "C7-cursor-gap-not-maskable": "verified"
+ },
+ "run_end_utc": "2026-11-18T04:40:38.523+00:00",
+ "duration_ms": 1248.383
+}

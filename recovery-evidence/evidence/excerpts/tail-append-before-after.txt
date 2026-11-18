@@ -1,0 +1,8 @@
+before (last 32 bytes):
+0000097e  31 31 22 2c 22 73 61 6d 70 6c 65 22 3a 31 31 2c   11","sample":11,
+0000098e  22 76 61 6c 69 64 22 3a 74 72 75 65 7d 7d 5d 7d   "valid":true}}]}
+
+after append of 3 bytes (last 35 bytes):
+0000097e  31 31 22 2c 22 73 61 6d 70 6c 65 22 3a 31 31 2c   11","sample":11,
+0000098e  22 76 61 6c 69 64 22 3a 74 72 75 65 7d 7d 5d 7d   "valid":true}}]}
+0000099e  00 00 00                                          ...

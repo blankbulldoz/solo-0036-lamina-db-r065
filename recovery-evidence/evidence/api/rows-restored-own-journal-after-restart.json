@@ -1,0 +1,67 @@
+{
+ "tag": "restored+own-journal-after-restart",
+ "match": true,
+ "row_count": 10,
+ "rows": [
+  {
+   "amplitude": 99,
+   "band": "b1",
+   "sample": 1,
+   "valid": true
+  },
+  {
+   "amplitude": 20,
+   "band": "b2",
+   "sample": 2,
+   "valid": true
+  },
+  {
+   "amplitude": 30,
+   "band": "b3",
+   "sample": 3,
+   "valid": true
+  },
+  {
+   "amplitude": 40,
+   "band": "b4",
+   "sample": 4,
+   "valid": true
+  },
+  {
+   "amplitude": 50,
+   "band": "b5",
+   "sample": 5,
+   "valid": true
+  },
+  {
+   "amplitude": 60,
+   "band": "b6",
+   "sample": 6,
+   "valid": true
+  },
+  {
+   "amplitude": 80,
+   "band": "b8",
+   "sample": 8,
+   "valid": true
+  },
+  {
+   "amplitude": 90,
+   "band": "b9",
+   "sample": 9,
+   "valid": true
+  },
+  {
+   "amplitude": 100,
+   "band": "b10",
+   "sample": 10,
+   "valid": true
+  },
+  {
+   "amplitude": 120,
+   "band": "b12",
+   "sample": 12,
+   "valid": true
+  }
+ ]
+}

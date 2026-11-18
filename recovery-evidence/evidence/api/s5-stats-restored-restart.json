@@ -1,0 +1,14 @@
+{
+ "sequence": 9,
+ "horizon": 0,
+ "active": [],
+ "keys": 10,
+ "versions": 13,
+ "index_entries": {},
+ "journal_records": 1,
+ "history_base": 8,
+ "recovered_tail_bytes": 0,
+ "commits_since_open": 0,
+ "conflicts_since_open": 0,
+ "queries_since_open": 0
+}

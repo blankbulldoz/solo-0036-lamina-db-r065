@@ -1,0 +1,116 @@
+{
+ "records": [
+  {
+   "format": 1,
+   "sequence": 4,
+   "kind": "commit",
+   "transaction": "d57bf003bfe1667fea77c9532d1a01cb",
+   "writes": [
+    {
+     "relation": "spectra",
+     "key": "int:2",
+     "row": {
+      "amplitude": 200,
+      "band": "b2",
+      "sample": 2,
+      "valid": true
+     }
+    }
+   ]
+  },
+  {
+   "format": 1,
+   "sequence": 5,
+   "kind": "commit",
+   "transaction": "d1e320c66f2ef83e0ec140545715e024",
+   "writes": [
+    {
+     "relation": "spectra",
+     "key": "int:2",
+     "row": {
+      "amplitude": 20,
+      "band": "b2",
+      "sample": 2,
+      "valid": true
+     }
+    }
+   ]
+  },
+  {
+   "format": 1,
+   "sequence": 6,
+   "kind": "commit",
+   "transaction": "85d14a96629fae804813e5cac1cb3af4",
+   "writes": [
+    {
+     "relation": "spectra",
+     "key": "int:8",
+     "row": {
+      "amplitude": 80,
+      "band": "b8",
+      "sample": 8,
+      "valid": true
+     }
+    }
+   ]
+  },
+  {
+   "format": 1,
+   "sequence": 7,
+   "kind": "commit",
+   "transaction": "df9b169a934b5ddd7c40b54d7febe940",
+   "writes": [
+    {
+     "relation": "spectra",
+     "key": "int:9",
+     "row": {
+      "amplitude": 90,
+      "band": "b9",
+      "sample": 9,
+      "valid": true
+     }
+    }
+   ]
+  },
+  {
+   "format": 1,
+   "sequence": 8,
+   "kind": "commit",
+   "transaction": "0deb346eedf9880c8c4c843bf7bcf1a6",
+   "writes": [
+    {
+     "relation": "spectra",
+     "key": "int:10",
+     "row": {
+      "amplitude": 100,
+      "band": "b10",
+      "sample": 10,
+      "valid": true
+     }
+    }
+   ]
+  },
+  {
+   "format": 1,
+   "sequence": 9,
+   "kind": "commit",
+   "transaction": "491710612915ebac2b72db74dd8da895",
+   "writes": [
+    {
+     "relation": "spectra",
+     "key": "int:11",
+     "row": {
+      "amplitude": 110,
+      "band": "b11",
+      "sample": 11,
+      "valid": true
+     }
+    }
+   ]
+  }
+ ],
+ "cursor": 9,
+ "head": 9,
+ "history_base": 0,
+ "more": false
+}

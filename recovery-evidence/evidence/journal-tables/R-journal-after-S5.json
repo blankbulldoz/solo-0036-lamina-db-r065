@@ -1,0 +1,28 @@
+{
+ "file_size": 225,
+ "sha256": "e4d43fcfcf34cc6a91c76be20f313dd463e8e99bf2631833a05fff9bb532647e",
+ "header_ok": true,
+ "base": 8,
+ "frames": [
+  {
+   "offset": 16,
+   "length": 201,
+   "crc_ok": true,
+   "sequence": 9,
+   "kind": "commit",
+   "format": 1,
+   "contiguous": true,
+   "transaction": "75c3db8606be57ed52e3411099e73222",
+   "mutations": [
+    {
+     "relation": "spectra",
+     "key": "int:12",
+     "deleted": false
+    }
+   ]
+  }
+ ],
+ "tail": null,
+ "parse_error": null,
+ "end_offset": 225
+}

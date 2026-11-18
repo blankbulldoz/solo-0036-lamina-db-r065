@@ -1,0 +1,91 @@
+[
+ {
+  "id": "C1-confirmed-prefix-durable",
+  "statement": "Every commit the server confirmed with 200 + sequence is present after SIGKILL crash and restart; recovered rows equal the independent client-side model exactly.",
+  "method": "independent row model vs /query after restart; journal decode contiguity base+1..head",
+  "result": "verified",
+  "evidence": [
+   "api/s3-stats-after-checkpoint-restart.json",
+   "journal-tables/A-journal-final.json",
+   "events.jsonl"
+  ],
+  "notes": "confirmed commits: [2, 3, 4, 5, 7, 8, 9]"
+ },
+ {
+  "id": "C2-ambiguous-commit-indeterminate-at-crash",
+  "statement": "A commit whose response was not consumed before the crash has no client-decidable outcome; ground truth is established only by recovery inspection. Both resolutions were run: a large commit killed before the journal write was LOST; small commits killed after the write/fsync were DURABLE despite the missing confirmation.",
+  "method": "raw-socket commit + SIGKILL at controlled delays and write-set sizes; post-restart /query + independent journal decode; all-or-nothing spot-check of the write set",
+  "result": "verified",
+  "evidence": [
+   "events.jsonl",
+   "journal-tables/A-journal-final.json"
+  ],
+  "notes": "{\"instances\": [{\"plan\": \"A0:large-commit-kill-immediately\", \"staged\": 1000, \"durable\": false, \"tail_bytes\": 0, \"response_bytes_after_kill\": 0}, {\"plan\": \"A:small-commit-kill-immediately\", \"staged\": 1, \"durable\": false, \"tail_bytes\": 0, \"response_bytes_after_kill\": 0}, {\"plan\": \"B:kill-after-60ms-unconsumed-response\", \"staged\": 1, \"durable\": true, \"tail_bytes\": 0, \"response_bytes_after_kill\": 200}], \"both_outcomes_observed\": true}"
+ },
+ {
+  "id": "C3-checkpoint-plus-suffix-equals-prefix",
+  "statement": "Recovered state = checkpoint image [1..7] + journal suffix [8..8] = exactly the confirmed commit prefix [1..8]; no gap, no extra.",
+  "method": "independent image decode (digest, sequence) + independent journal frame table (contiguity) + row model at head and at checkpoint sequence",
+  "result": "verified",
+  "evidence": [
+   "journal-tables/A-journal-after-S3.json",
+   "api/s3-checkpoint-response.json",
+   "api/s3-stats-after-checkpoint-restart.json",
+   "events.jsonl"
+  ],
+  "notes": "image.sequence=7, journal frames 1..8, head=8"
+ },
+ {
+  "id": "C4-backup-plus-catchup-equals-restored-prefix",
+  "statement": "Restored state = backup image [1..8] + restored-instance journal [9..9]; the source's post-backup commit (seq 9, row 11) is NOT part of the restored prefix.",
+  "method": "independent backup decode + restored journal header/base decode + row model comparison; post-backup row absence check",
+  "result": "verified",
+  "evidence": [
+   "api/s4-stats-restored.json",
+   "api/s5-stats-restored-restart.json",
+   "journal-tables/R-journal-after-S5.json",
+   "excerpts/R-journal-header.txt",
+   "events.jsonl"
+  ],
+  "notes": "backup.sequence=8, restored journal base=8, restored head=9"
+ },
+ {
+  "id": "C5-incomplete-tail-truncated",
+  "statement": "A 3-byte incomplete tail is truncated at startup; the committed prefix is unchanged (recovered_tail_bytes=3, head and rows identical to pre-append).",
+  "method": "append 3 bytes to a journal copy; restart; stats + row model + journal re-decode",
+  "result": "verified",
+  "evidence": [
+   "api/s6-stats-tail-recovered.json",
+   "excerpts/tail-append-before-after.txt",
+   "journal-tables/A-tail-journal-after-truncation.json"
+  ],
+  "notes": "recovered_tail_bytes=3"
+ },
+ {
+  "id": "C6-complete-corruption-refused",
+  "statement": "A single-bit flip inside a complete frame (last frame or middle frame) makes startup FAIL with a checksum error; the journal is not silently truncated or modified.",
+  "method": "byte flip on copies; run binary; check exit code, stderr, and file hash before/after",
+  "result": "verified",
+  "evidence": [
+   "api/s6-corrupt-last-frame-startup.json",
+   "api/s6-corrupt-mid-frame-startup.json",
+   "excerpts/corrupt-last-frame-flip.txt",
+   "excerpts/corrupt-mid-frame-flip.txt"
+  ],
+  "notes": "[{\"specimen\": \"last-frame\", \"refused\": true, \"exit_code\": 1, \"timed_out_still_serving\": false, \"flipped_sha256\": \"46d13110c3c6fa793590915337d31a9ca5ce04d7d1139b72503f24d69d92b6ea\", \"stderr_tail\": \"2026/11/18 04:40:38 ERROR lamina stopped error=\\\"journal checksum mismatch at 2253\\\"\", \"journal_unmodified_after_refusal\": true}, {\"specimen\": \"mid-frame\", \"refused\": true, \"exit_code\": 1, \"timed_out_still_serving\": false, \"flipped_sha256\": \"95f6e5a32561972bd253f346df6d1662c8d69a3a0c9dcce775d0f8f317b93fca\", \"stderr_tail\": \"2026/11/18 04:40:38 ERROR lamina stopped error=\\\"journal checksum mismatch at 16\\\"\", \"journal_unmodified_after_refusal\": true}]"
+ },
+ {
+  "id": "C7-cursor-gap-not-maskable",
+  "statement": "After restore, change cursors below history_base=8 are rejected (410), even though current row values can be identical to a consumer's last-seen values (row2 amplitude unchanged while transitions at seq 4,5 are unreachable). Cursors at the base are accepted but continue on a DIFFERENT lineage: sequence 9 exists on both sides with different transaction ids/content.",
+  "method": "raw /changes calls on source and restored instances; transaction-id comparison at the same sequence number",
+  "result": "verified",
+  "evidence": [
+   "api/s4-changes-old-cursor-410.json",
+   "api/s4-changes-at-base-200.json",
+   "api/s3-changes-after-cursor-source.json",
+   "api/s3-changes-after-backup-seq-source.json",
+   "api/s4-changes-after-base-restored.json"
+  ],
+  "notes": "410 for cursor<base; 200 for cursor==base with new-lineage records"
+ }
+]

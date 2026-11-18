@@ -1,0 +1,26 @@
+{
+ "records": [
+  {
+   "format": 1,
+   "sequence": 9,
+   "kind": "commit",
+   "transaction": "491710612915ebac2b72db74dd8da895",
+   "writes": [
+    {
+     "relation": "spectra",
+     "key": "int:11",
+     "row": {
+      "amplitude": 110,
+      "band": "b11",
+      "sample": 11,
+      "valid": true
+     }
+    }
+   ]
+  }
+ ],
+ "cursor": 9,
+ "head": 9,
+ "history_base": 0,
+ "more": false
+}

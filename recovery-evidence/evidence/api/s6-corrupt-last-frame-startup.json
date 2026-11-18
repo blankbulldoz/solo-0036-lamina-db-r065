@@ -1,0 +1,6 @@
+{
+ "exit_code": 1,
+ "timed_out_still_serving": false,
+ "stderr_tail": "2026/11/18 04:40:38 ERROR lamina stopped error=\"journal checksum mismatch at 2253\"",
+ "journal_unmodified_after_refusal": true
+}

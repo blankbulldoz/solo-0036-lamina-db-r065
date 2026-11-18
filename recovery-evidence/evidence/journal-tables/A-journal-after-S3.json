@@ -1,0 +1,164 @@
+{
+ "file_size": 2253,
+ "sha256": "eeb4eb43716c5c0c95a85c68b5323015e3e96a30ff09d2d3fafc18a9e94df31e",
+ "header_ok": true,
+ "base": 0,
+ "frames": [
+  {
+   "offset": 16,
+   "length": 309,
+   "crc_ok": true,
+   "sequence": 1,
+   "kind": "relation",
+   "format": 1,
+   "contiguous": true
+  },
+  {
+   "offset": 333,
+   "length": 581,
+   "crc_ok": true,
+   "sequence": 2,
+   "kind": "commit",
+   "format": 1,
+   "contiguous": true,
+   "transaction": "4633cf4a57f006861c627b07fa05dec3",
+   "mutations": [
+    {
+     "relation": "spectra",
+     "key": "int:1",
+     "deleted": false
+    },
+    {
+     "relation": "spectra",
+     "key": "int:2",
+     "deleted": false
+    },
+    {
+     "relation": "spectra",
+     "key": "int:3",
+     "deleted": false
+    },
+    {
+     "relation": "spectra",
+     "key": "int:4",
+     "deleted": false
+    },
+    {
+     "relation": "spectra",
+     "key": "int:5",
+     "deleted": false
+    }
+   ]
+  },
+  {
+   "offset": 922,
+   "length": 293,
+   "crc_ok": true,
+   "sequence": 3,
+   "kind": "commit",
+   "format": 1,
+   "contiguous": true,
+   "transaction": "bea2fbcdd2c2c1d38182f72db79dfac4",
+   "mutations": [
+    {
+     "relation": "spectra",
+     "key": "int:1",
+     "deleted": false
+    },
+    {
+     "relation": "spectra",
+     "key": "int:6",
+     "deleted": false
+    }
+   ]
+  },
+  {
+   "offset": 1223,
+   "length": 198,
+   "crc_ok": true,
+   "sequence": 4,
+   "kind": "commit",
+   "format": 1,
+   "contiguous": true,
+   "transaction": "d57bf003bfe1667fea77c9532d1a01cb",
+   "mutations": [
+    {
+     "relation": "spectra",
+     "key": "int:2",
+     "deleted": false
+    }
+   ]
+  },
+  {
+   "offset": 1429,
+   "length": 197,
+   "crc_ok": true,
+   "sequence": 5,
+   "kind": "commit",
+   "format": 1,
+   "contiguous": true,
+   "transaction": "d1e320c66f2ef83e0ec140545715e024",
+   "mutations": [
+    {
+     "relation": "spectra",
+     "key": "int:2",
+     "deleted": false
+    }
+   ]
+  },
+  {
+   "offset": 1634,
+   "length": 197,
+   "crc_ok": true,
+   "sequence": 6,
+   "kind": "commit",
+   "format": 1,
+   "contiguous": true,
+   "transaction": "85d14a96629fae804813e5cac1cb3af4",
+   "mutations": [
+    {
+     "relation": "spectra",
+     "key": "int:8",
+     "deleted": false
+    }
+   ]
+  },
+  {
+   "offset": 1839,
+   "length": 197,
+   "crc_ok": true,
+   "sequence": 7,
+   "kind": "commit",
+   "format": 1,
+   "contiguous": true,
+   "transaction": "df9b169a934b5ddd7c40b54d7febe940",
+   "mutations": [
+    {
+     "relation": "spectra",
+     "key": "int:9",
+     "deleted": false
+    }
+   ]
+  },
+  {
+   "offset": 2044,
+   "length": 201,
+   "crc_ok": true,
+   "sequence": 8,
+   "kind": "commit",
+   "format": 1,
+   "contiguous": true,
+   "transaction": "0deb346eedf9880c8c4c843bf7bcf1a6",
+   "mutations": [
+    {
+     "relation": "spectra",
+     "key": "int:10",
+     "deleted": false
+    }
+   ]
+  }
+ ],
+ "tail": null,
+ "parse_error": null,
+ "end_offset": 2253
+}
